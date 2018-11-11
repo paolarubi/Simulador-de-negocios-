@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Simulador_de_negocios.Models.Producto_servicio>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>PRODUCTO DEL SERVICIO</h2>
+
+<p>
+    <a asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.unidad_produccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.produccion_mensual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.costo_unitario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.margen_utilidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio_publico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.datos_empresa_id_empresa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.unidad_produccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.produccion_mensual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costo_unitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.margen_utilidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio_publico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.datos_empresa_id_empresa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_producto">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.id_producto">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_producto">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
